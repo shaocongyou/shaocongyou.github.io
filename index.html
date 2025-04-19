@@ -1,11 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello World</title>
+    <title>服务器IP地址</title>
 </head>
 <body>
-    <h>How are you?</h>
+    <h1>服务器IP地址</h1>
+    <p id="ip-address">正在获取IP地址...</p>
+
+    <script>
+        // 使用第三方API获取IP（注意：这获取的是客户端的公网IP，不是服务器IP）
+        fetch('https://api.ipify.org?format=json')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('ip-address').textContent = data.ip;
+            })
+            .catch(error => {
+                document.getElementById('ip-address').textContent = "无法获取IP地址";
+            });
+    </script>
 </body>
 </html>
