@@ -1,22 +1,19 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>服务器IP地址</title>
-</head>
-<body>
-    <h1>服务器IP地址</h1>
-    <p id="ip-address">正在获取IP地址...</p>
-
-    <script>
-        // 使用第三方API获取IP（注意：这获取的是客户端的公网IP，不是服务器IP）
-        fetch('https://api.ipify.org?format=json')
-            .then(response => response.json())
-            .then(data => {
-                document.getElementById('ip-address').textContent = data.ip;
-            })
-            .catch(error => {
-                document.getElementById('ip-address').textContent = "无法获取IP地址";
-            });
-    </script>
-</body>
-</html>
+	<!DOCTYPE html>
+	<html lang="zh-CN">
+	<head>
+	   <meta charset="UTF-8">
+	   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	   <title>网站欢迎页面</title>
+	</head>
+	<body>
+	   <h1>欢迎来到我的网站！</h1>
+	   <script>
+	       // 检测访问路径是否为根目录
+	       if (window.location.pathname === '/') {
+	           setTimeout(() => {
+	               alert('欢迎访问网站！');  // 延迟执行避免阻塞加载
+	           }, 500);
+	       }
+	   </script>
+	</body>
+	</html>
